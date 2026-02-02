@@ -1,0 +1,40 @@
+package hu.progmasters.human;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class AdamEve {
+
+    public static void main(String[] args) {
+        Human[] humans = create();
+
+        for (Human human : humans) {
+            System.out.println(human.speak());
+        }
+    }
+
+    public static Human[] create() {
+        Human[] humans = new Human[2];
+        humans[0] = new Man("Adam");
+        humans[1] = new Woman("Eve");
+        return humans;
+    }
+}
+
+// =======================
+// Domain classes
+// =======================
+
+abstract class Human {
+
+    protected String name;
+
+    protected Human(String name) {
+        this.name = name;
+    }
+
+    public abstract String speak();
+}
+
+class Man e
